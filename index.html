@@ -12,10 +12,9 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
-    <header></header>
     <main>
       <!-- container -->
-      <div class="flex flex-col md:flex-row gap-5">
+      <div class="flex flex-col md:flex-row gap-5 mt-10">
         <!-- shape container  -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           <!-- triangle card  -->
@@ -181,34 +180,84 @@
               </div>
             </div>
           </div>
-          <!-- third card  -->
+          <!-- pentagon card  -->
           <div class="card bg-base-100 shadow-xl">
             <figure>
-              <img src="./images/parallelogram.png" alt="Shoes" />
+              <img src="./images/rhombus.png" alt="rhombus" />
             </figure>
             <div class="card-body">
-              <h2 class="text-center text-xl font-medium">Parallelogram</h2>
-              <p class="text-center">Area (A) = 0.5 X b X h</p>
+              <h2 class="text-center text-xl font-medium">Rhombus</h2>
+              <p class="text-center">
+                Area (A) = 0.5 X d<sub>1</sub> X d<sub>2</sub>
+              </p>
               <p class="text-center">
                 <input
                   class="w-20 bg-gray-200 px-2"
                   type="text"
-                  placeholder="base"
+                  placeholder="d1"
                   name=""
-                  id=""
+                  id="rhombus-d1"
                 />
                 <span class="ml-2">cm</span>
                 <input
                   class="w-20 bg-gray-200 px-2 ml-3"
                   type="text"
-                  placeholder="height"
+                  placeholder="d2"
                   name=""
-                  id=""
+                  id="rhombus-d2"
                 />
                 <span class="ml-2">cm</span>
               </p>
+              <p class="text-xl">
+                Area:
+                <span class="font-semibold" id="rhombus-area-show">0 </span
+                >cm<sup>2</sup>
+              </p>
               <div>
-                <button class="bg-sky-400 w-full rounded-lg py-2 mt-5">
+                <button
+                  onclick="calculateRhombusArea()"
+                  class="bg-sky-400 w-full rounded-lg py-2 mt-5"
+                >
+                  Calculate
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="card bg-base-100 shadow-xl">
+            <figure>
+              <img src="./images/pentagon.png" alt="pentagon" />
+            </figure>
+            <div class="card-body">
+              <h2 class="text-center text-xl font-medium">Pentagon</h2>
+              <p class="text-center">Area (A) = 0.5 X p X b</p>
+              <p class="text-center">
+                <input
+                  class="w-20 bg-gray-200 px-2"
+                  type="text"
+                  placeholder="p"
+                  name=""
+                  id="pentagon-p"
+                />
+                <span class="ml-2">cm</span>
+                <input
+                  class="w-20 bg-gray-200 px-2 ml-3"
+                  type="text"
+                  placeholder="b"
+                  name=""
+                  id="pentagon-b"
+                />
+                <span class="ml-2">cm</span>
+              </p>
+              <p class="text-xl">
+                Area:
+                <span class="font-semibold" id="pentagon-area-show">0 </span
+                >cm<sup>2</sup>
+              </p>
+              <div>
+                <button
+                  onclick="calculatePentagonArea()"
+                  class="bg-sky-400 w-full rounded-lg py-2 mt-5"
+                >
                   Calculate
                 </button>
               </div>
@@ -216,8 +265,9 @@
           </div>
         </div>
         <!-- area calculator  -->
-        <div class="border-2 border-black w-full md:w-1/4 text-center">
-          <h1 class="text-4xl">Area Calculator</h1>
+        <div class="w-full md:w-1/4 text-center font-bold">
+          <h1 class="text-4xl">Area Calculation</h1>
+          <div id="area-calculation"></div>
         </div>
       </div>
     </main>
